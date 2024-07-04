@@ -1707,7 +1707,6 @@ contract ClaimPresale is IFPurchasable, IFFundable {
         }
         require(getSignedTermsOfSale(_msgSender()) > 0, 'only signed users can initiate purchase');
 
-        totalPaymentReceived += paymentAmount;
         super._purchaseWithCode(paymentAmount, remaining, code);
         // Update token purchase variables
         uint256 tokenPurchased = (paymentReceived[_msgSender()]) / salePrice;
